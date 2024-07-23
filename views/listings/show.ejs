@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show data</title>
+</head>
+<body>
+    <h3>individual route details</h3>
+    
+    <ul>
+        <li><%=dataBasedOnId.title %></li>
+        <li><%=dataBasedOnId.description %></li>
+        <li><%= dataBasedOnId.price.toLocaleString("en-IN")%></li>
+        <li><%= dataBasedOnId.location%></li>
+        <li><%= dataBasedOnId.country%></li>
+      
+    </ul>
+    <br>
+    <a href="/Listings/<%= dataBasedOnId._id %>/edit"> Edit this Listing </a>
+    <form method="post" action="/Listings/<%= dataBasedOnId._id %>?_method=DELETE">
+        <button>Delete</button>
+    </form>
+</body>
+</html>
