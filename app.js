@@ -67,7 +67,7 @@ app.get("/Listings/:id", async ( req , res) => {
     let {id} = req.params;
     let dataBasedOnId = await Listing.findById(id);
     console.log(dataBasedOnId);
-    res.render("listings/show.ejs",{dataBasedOnId});
+    res.render("listings/show.ejs",{listing : dataBasedOnId});
 })
 
 app.get("/Listings/:id/edit", async (req  , res) => {
