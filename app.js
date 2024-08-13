@@ -128,7 +128,7 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
     console.log("Entered final error handler");
     let { statusCode = 500, message = "Something went wrong" } = err;
-    res.status(statusCode).send(message);
+   res.status(statusCode).render("error.ejs" , {err});
 });
 
 // Start the server and listen on port 8080
